@@ -3,10 +3,11 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  // build: {
-  //   inlineStylesheets: "never",
-  // },
-
+  // 🔽 ОБЯЗАТЕЛЬНЫЕ НАСТРОЙКИ ДЛЯ GITHUB PAGES
+  site: 'https://tema4647.github.io',
+  base: '/backup', // Имя вашего репозитория
+  
+  // 
   output: "static",
   vite: {
     build: {
@@ -22,4 +23,4 @@ export default defineConfig({
       },
     },
   },
-});
+}); 
