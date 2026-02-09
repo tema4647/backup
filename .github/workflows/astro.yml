@@ -23,12 +23,30 @@ jobs:
           node-version: 22
           cache: 'npm'
       
-      # КЛЮЧЕВОЙ ШАГ: Установка зависимостей
       - name: Install dependencies
-        run: npm ci  # Используем ci для чистых установок
+        run: npm ci
       
-      - name: Deploy with Astro
+      - name: Build with Astro
         uses: withastro/action@v5
         with:
-          # Убираем package-manager, так как зависимости уже установлены
           node-version: 22
+    
+    # 👇 Ключевое изменение: шаг загрузки артефакта теперь внутри job 'build'
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist  # Astro по умолчанию собирает в папку dist
+
+  # 👇 Этот ВТОРОЙ job был пропущен. Он отвечает за публикацию.
+  deploy:
+    # Ждёт завершения job 'build'
+    needs: build
+    runs-on: ubuntu-latest
+    # Указываем специальное окружение для GitHub Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
