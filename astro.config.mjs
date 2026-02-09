@@ -5,7 +5,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   // КРИТИЧЕСКИ ВАЖНЫЕ НАСТРОЙКИ ДЛЯ GITHUB PAGES
   site: 'https://tema4647.github.io',
-  base: '/backup',
+  base: import.meta.env.BASE_URL || '/backup',
   
   // ВАШИ ТЕКУЩИЕ НАСТРОЙКИ
   output: "static",
