@@ -1,0 +1,215 @@
+<div id="popupMenu" class="popup-menu">
+  <div class="popup-menu__header">
+    <div class="popup-menu__phone">+7 342 255 64 19</div>
+    <div id="popup-menu__close" class="popup-menu__close">
+      <div class="popup-menu__close-r"></div>
+      <div class="popup-menu__close-l"></div>
+    </div>
+  </div>
+  <div class="popup-menu__body">
+    <nav class="popup-menu__menu">
+      <ul class="popup-menu__list">
+        <li class="popup-menu__list-item">
+          <div class="popup-menu__list-item-title" role="button">
+            О «Традиции»
+          </div>
+          <ul class="popup-menu__inner-list">
+            <li class="popup-menu__inner-list-item">
+              <a class="popup-menu__link" href="../about">О «Традиции»</a>
+            </li>
+            <li class="popup-menu__inner-list-item">
+              <a class="popup-menu__link" href="../about/all-news">Все новости</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="popup-menu__list-item">
+          <div class="popup-menu__list-item-title" role="button">
+            Образование
+          </div>
+          <ul class="popup-menu__inner-list">
+            <li class="popup-menu__inner-list-item">
+              <a class="popup-menu__link" href="../preschool">Подготовка к школе</a>
+            </li>
+            <li class="popup-menu__inner-list-item">
+              <a class="popup-menu__link" href="../junior-school"
+                >Начальные классы</a
+              >
+            </li>
+            <li class="popup-menu__inner-list-item">
+              <a class="popup-menu__link" href="../middle-school"
+                >Средние классы</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="popup-menu__list-item">
+          <a href="../vacancy" class="popup-menu__link">Вакансии</a>
+        </li>
+
+        <li class="popup-menu__list-item">
+          <a class="popup-menu__link" href="../sveden"
+            >Сведения об образовательной организации</a
+          >
+        </li>
+
+        <li class="popup-menu__list-item">
+          <a href="../contacts" class="popup-menu__link">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="popup-menu__footer"></div>
+</div>
+
+<script>
+  (function () {
+    const popupMenuClose = document.getElementById("popup-menu__close");
+    const popupMenu = document.getElementById("popupMenu");
+    const overlay = document.getElementById("overlay");
+    const body = document.body;
+
+    popupMenuClose?.addEventListener("click", () => {
+      overlay?.style.setProperty("display", "none");
+      body?.classList.remove("body-no-scrool");
+      popupMenu?.classList.remove("popup-menu__active");
+    });
+  })();
+
+  (function () {
+    const popupMenuListItemsTitle = document.querySelectorAll(
+      ".popup-menu__list-item-title"
+    );
+
+    popupMenuListItemsTitle.forEach((listItemTitle) => {
+      listItemTitle.addEventListener("click", (e) => {
+        const target = e.target as Element; // Явно говорим: «это Element»
+
+        // Только кнопки или элементы с role="button"
+        if (
+          target.tagName !== "BUTTON" &&
+          target.getAttribute("role") !== "button"
+        ) {
+          return;
+        }
+
+        // Находим родительский элемент .popup-menu__list-item
+        const item = target?.closest(".popup-menu__list-item");
+        if (!item) return; // Защита от отсутствия родителя
+
+        // Ищем ul внутри текущего элемента
+        const currentUl = item.querySelector("ul");
+        if (!currentUl) return;
+
+        // Закрываем все ul в меню, кроме текущего
+        const allUls = document.querySelectorAll(".popup-menu__list-item ul");
+        allUls.forEach((ul) => {
+          if (ul !== currentUl) {
+            ul.classList.remove("inner-list-active");
+          }
+        });
+
+        // Переключаем класс
+        currentUl.classList.toggle("inner-list-active");
+      });
+    });
+  })();
+</script>
+
+<style is:global>
+  .popup-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    width: 25%;
+    min-height: 100%;
+    transform: translate(100%);
+    opacity: 0;
+    background-color: white;
+    z-index: 1000;
+    overflow: hidden;
+    padding: 0px 35px;
+  }
+
+  .popup-menu__header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    z-index: 1;
+  }
+
+  .popup-menu__close {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-menu__close-r {
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-color);
+    transform: rotate(45deg);
+  }
+
+  .popup-menu__close-l {
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-color);
+    transform: rotate(-45deg);
+  }
+
+  .popup-menu__list {
+    font-size: 18px;
+  }
+
+  .popup-menu__list-item-title {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--grey-color);
+    padding-bottom: 10px;
+    cursor: pointer;
+  }
+  .popup-menu__inner-list {
+    font-size: 16px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    display: none;
+  }
+
+  .popup-menu__inner-list-item {
+    border-bottom: 1px solid var(--grey-color);
+    margin-bottom: 10px;
+  }
+
+  .popup-menu__inner-list-item:hover {
+    border-bottom: 1px solid var(--font-color);
+    transition: 1s;
+  }
+
+  .popup-menu__link {
+    margin-bottom: 7px;
+    color: var(--font-color);
+  }
+
+  .popup-menu__active {
+    transition: var(--transition);
+    min-height: 100%;
+    transform: translate(0%);
+    opacity: 1;
+    -webkit-box-shadow: -10px 0px 25px -10px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: -10px 0px 25px -10px rgba(34, 60, 80, 0.2);
+    box-shadow: -10px 0px 25px -10px rgba(34, 60, 80, 0.2);
+  }
+
+  .inner-list-active {
+    display: block;
+  }
+</style>

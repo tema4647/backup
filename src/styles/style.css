@@ -1,0 +1,47 @@
+/* общие */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--font-main);
+  position: relative;
+}
+
+.container {
+  width: var(--container-size);
+  margin: 0 auto;
+  padding: 0px var(--padding);
+}
+
+section {
+  padding: 70px 0px;
+}
+
+.body-no-scrool {
+  overflow-y: hidden;
+}
+h1 {
+  font-size: 40px;
+  color: var(--font-color);
+  /* letter-spacing: 2px; */
+  line-height: 1.4;
+  font-weight: 600;
+}
+h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+h3 {
+  font-size: 23px;
+}
+
+h2,
+h3 {
+  color: var(--font-color);
+}
+p {
+  color: var(--font-color);
+  font-size: 18px;
+  line-height: 33px;
+  margin-bottom: 30px;
+}

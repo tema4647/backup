@@ -1,0 +1,71 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+interface ContentItems  {
+    title: string,
+    src: string
+}
+const ContentItems: ContentItems[] = [
+  { title: "Основные сведения", src: '/sveden/common' },
+  { title: "Структура и органы управления образовательной организацией", src: '/sveden/struct' },
+  { title: "Документы", src: '/sveden/document' },
+  { title: "Образование", src: '/sveden/education' },
+  { title: "Образовательные стандарты и требования", src: '/sveden/eduStandarts' },
+  { title: "Руководство. Педагогический (научно-педагогический) состав", src: '/sveden/employees' },
+  {
+    title: "Материально-техническое обеспечение и оснащенность образовательного процесса", src: '/sveden/objects'
+  },
+  { title: "Стипендии и меры поддержки обучающихся", src: '/sveden/grants' },
+  { title: "Платные образовательные услуги", src: '/sveden/paid_edu' },
+  { title: "Финансово-хозяйственная деятельность", src: '/sveden/budget' },
+  { title: "Вакантные места для приема (перевода) обучающихся", src: '/sveden/vacant' },
+  { title: "Доступная среда", src: '/sveden/ovz' },
+  { title: "Международное сотрудничество", src: '/sveden/inter' },
+  { title: "Организация питания", src: '/sveden/catering' },
+];
+---
+
+<MainLayout>
+  <section class="educational">
+    <div class="container">
+      <div class="educational__wrapper">
+        <h1>Сведения об образовательной организации</h1>
+        <div class="educational__card-wrapper">
+          {
+            ContentItems.map((item) => {
+              return (
+                <a class="educational__card" href={item.src}>
+                  <div class="educational__card-title">{item.title}</div>
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style is:global>
+  .educational {
+  }
+
+  .educational__wrapper {
+  }
+  .educational__card-wrapper {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .educational__card {
+    width: 300px;
+    height: 115px;
+    background-color: var(--grey-color);
+    overflow: hidden;
+    padding: 20px 30px;
+    color: var(--font-color);
+    font-size: 16px;
+  }
+
+  .educational__card-title {
+  }
+</style>

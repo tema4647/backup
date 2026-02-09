@@ -1,0 +1,75 @@
+---
+import Accordeon from "../widgets/Accordeon.astro";
+
+interface AccordeonData {
+  title: string;
+  text: string;
+}
+
+const accordeonData: AccordeonData[] = [
+  {
+    title: "Математика",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "Литература",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "Английский язык",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "Художественное искусство",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "Театральное искусство",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+];
+---
+
+<section class="questions">
+  <div class="container">
+    <h2 class="questions__title">Вопросы</h2>
+    <div class="questions__wrapper">
+      <Accordeon class="questions__accordeon" accordeonData={accordeonData} />
+      <p class="questions__form-desc">
+          Здавствуйте, меня зовут Анна, я менеджер по продажам в «Традиции» и отвечаю 
+          за коммуникацию и консультирование родителей. Позвоните мне, я отвечу на все ваши вопросы,
+          расскажу о поступление, программе обучения, досуге детей, психологической службе, 
+          питании и дополнителном образовании,
+          запишу вас на индивидуальную встречу (экскурсию) в удобное для вас
+          время, организую встречу с руководителями. Кстати вы можете оставить
+          заявку и я перезвоню Вам сама или написать в телеграмм или в вк. Я буду
+          очень рада вам помочь. Если у Вас остались вопросы, или нужно
+          записаться на экскурсию обязательно набирайте. Жду!
+        </p>
+        <img src="/images/foto/main/anna1.jpg" alt="" class="questions__img">
+
+      <!-- <div class="form">
+        
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .questions__wrapper{
+    display: grid;
+    grid-template-columns: 30% 30% auto;
+    column-gap: 30px;
+  }
+  .questions__accordeon {
+    /* width: 50%; */
+  }
+  .questions__img{
+    width: 100%;
+    height: 700px;
+    object-fit: contain;
+  }
+  .questions__form-desc{
+    font-size: 14px;
+  }
+</style>

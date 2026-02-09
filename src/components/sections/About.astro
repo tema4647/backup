@@ -1,0 +1,142 @@
+---
+import Button from "../ui/Button.astro";
+import Accordeon from "../widgets/Accordeon.astro";
+
+interface AccordeonData {
+    title: string,
+    text: string
+}
+
+const accordeonData:AccordeonData[] = [
+  {
+    title: "Математика",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "Литература",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "Английский язык",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "Художественное искусство",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+  {
+    title: "Театральное искусство",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+  },
+];
+---
+
+<section class="about">
+  <div class="container">
+    <h2 class="about__title">О «Традиции»</h2>
+    <div class="about__wrapper">
+      <div class="about__part-left">
+        <p class="about__text">
+          Школа науки и искусства. Общеобразовательная программа с углубленным
+          изучением математики, литературы и английского языка. А так же
+          программа школы искусств, <br /> где два отделения: художественное и театральное.
+        </p>
+        <h3>Наша миссия</h3>
+        <p class="about__text">
+          Мы хотим, чтобы наши дети выросли хорошо образованными, интересными,
+          великодушными, благородными, добрыми и нравственными людьми со здоровой
+          самооценкой.
+        </p>
+        <!-- <p>
+            Образовательная политика «Школы» – быть для ребенка ресурсным местом,
+             давать внутреннюю опору, источник уверенности, душевных сил, знаний и умений.
+        </p> -->
+
+        <!-- <p>
+            Мы намерены воспитать ребенка, способного к активному интеллектуальному труду, 
+            сформировать высокообразованную интеллигентную личность, готовую к творческой и 
+            исследовательской деятельности, превратить образовательный процесс в удовольствие учения.
+        </p> -->
+        <img class="about__img" src="/images/foto/main/new5.jpg" alt="" />
+      </div>
+      <div class="about__part-right">
+        <Accordeon accordeonData={accordeonData} />
+        <Button class="about__button">Подробнее</Button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .about {
+    /* background-color: var(--grey-color); */
+  }
+
+  .about__title {
+  }
+
+  .about__wrapper {
+    display: flex;
+    column-gap: 70px;
+  }
+
+  .about__part-left {
+    flex-basis: 50%;
+  }
+
+  .about__text {
+  }
+  .about__part-right {
+    flex-basis: 50%;
+    height: 500px;
+  }
+
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .accordion__item {
+    height: 90px;
+    background-color: var(--grey-color);
+    /* background-color: white; */
+
+    border-radius: var(--border-radius);
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .accordion__item-title {
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--font-color);
+  }
+
+  .accordion__item-button {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--main-color);
+    background-color: var(--main-color);
+    /* border-radius: 100%; */
+    display: none;
+  }
+
+  .about__img {
+    width: 700px;
+    /* height: 700px; */
+    /* width: 100%; */
+    height: 500px;
+    margin-top: 50px;
+    border-radius: var(--border-radius) 0px 0px var(--border-radius);
+    object-fit: cover;
+  }
+
+  .about__button {
+    margin-top: 50px;
+  }
+</style>

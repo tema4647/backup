@@ -1,0 +1,73 @@
+---
+import Button from "../ui/Button.astro";
+---
+
+<section class="firstscreen">
+  <div class="container">
+    <div class="firstscreen__wrapper">
+      <img
+        class="firstscreen__img"
+        src="../images/foto/main/progulka.jpg"
+        alt="Частная школа"
+      />
+      <div class="firstscreen__title">
+        <h1 class="firstscreen__h1">
+          Воспитываем и формируем <br/> культурные, нравственные, интеллектуальные<br/>  основы личности
+        </h1>
+        <div class="firstscreen_wrapper-button">
+          <Button class="firstscreen__button">Обратиться к менеджеру</Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .firstscreen__wrapper {
+    height: 600px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    column-gap: 70px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    padding-right: 50px;
+    background-color: var(--grey-color);
+  }
+
+  .firstscreen__img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    flex-basis: 50%;
+
+  }
+
+  .firstscreen__title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+
+  }
+
+  .firstscreen__h1 {
+    margin-bottom: 20px;
+
+  }
+
+  
+
+  .firstscreen_wrapper-button {
+    display: flex;
+    column-gap: 20px;
+  }
+
+  .firstscreen__button {
+    margin-top: 50px;
+  }
+
+  .firstscreen__shape {
+    margin: 50px 0px;
+  }
+</style>

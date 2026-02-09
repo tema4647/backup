@@ -1,0 +1,124 @@
+---
+const { accordeonData, class: className, ...rest } = Astro.props;
+---
+
+<div class:list={["accordeon", className]} {...rest}>
+  {
+    accordeonData?.map((item: { title: string; text: string }) => {
+      return (
+        <div class="accordeon__wrapper">
+          <div class="accordeon__header">
+            <div class="accordeon__title">{item.title}</div>
+            <div class="accordeon__arrow">
+              <div class="accordeon__arrow-r" />
+              <div class="accordeon__arrow-l" />
+            </div>
+          </div>
+          <div class="accordeon__body">
+            <div class="accordeon__text">{item.text}</div>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>
+
+<script>
+  (function () {
+    const accordeonHeaders = document.querySelectorAll(".accordeon__header");
+    const accordeonBodys = document.querySelectorAll(".accordeon__body");
+    
+
+    accordeonHeaders.forEach((header) => {
+      header.addEventListener("click", () => {
+        const headerParent = header.closest(".accordeon__wrapper");
+        const arrows = document.querySelectorAll(".accordeon__arrow")
+
+        const currentArrow = headerParent?.querySelector(".accordeon__arrow")
+        const currentBody = headerParent?.querySelector(".accordeon__body");
+
+        arrows.forEach((arrow) => {
+          if (arrow !== currentArrow) {
+            arrow.classList.remove("accordeon__arrow-up");
+          }
+        });
+
+        accordeonBodys.forEach((body) => {
+          if (body !== currentBody) {
+            body.classList.remove("accordeon__body-active");
+          }
+        });
+
+        currentBody?.classList.toggle("accordeon__body-active");
+        currentArrow?.classList.toggle("accordeon__arrow-up")
+
+      });
+    });
+  })();
+</script>
+
+<style is:global>
+  .accordeon {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    color: var(--font-color);
+  }
+  .accordeon__header {
+    height: 90px;
+    background-color: var(--grey-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+  }
+  .accordeon__title {
+    font-size: 23px;
+    font-weight: 600;
+  }
+
+  .accordeon__arrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    transition: .7s ease;
+  }
+
+  .accordeon__arrow-up{
+    transform: rotate(180deg);
+    transition: .7s ease;
+
+  }
+  .accordeon__arrow-r {
+    width: 20px;
+    height: 2px;
+    background-color: var(--main-color);
+    transform: rotate(45deg) translate(3px);
+  }
+  .accordeon__arrow-l {
+    width: 20px;
+    height: 2px;
+    background-color: var(--main-color);
+    transform: rotate(-45deg) translate(-3px);
+  }
+  .accordeon__body {
+    max-height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    transition: 0.7s cubic-bezier(0.25, 0.8, 0.5, 1);
+  }
+
+  .accordeon__body-active {
+    max-height: 700px;
+    visibility: visible;
+    transition: 5s cubic-bezier(0.25, 0.8, 0.5, 1);
+  }
+  .accordeon__text {
+    background-color: var(--grey-color);
+    padding: 0px 30px 30px 30px;
+  }
+</style>

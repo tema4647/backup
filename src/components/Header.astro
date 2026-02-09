@@ -1,0 +1,195 @@
+
+<header class="header">
+  <div class="container">
+    <div class="header__wrapper">
+      <div class="header__part-left">
+        <a href="/" class="logo">
+          <div class="logo__wrapper-img">
+            <img
+              class="logo__img"
+              src="../images/logo/logo115.png"
+              alt="логотип"
+            />
+          </div>
+
+          <div class="logo__wrapper-name">
+            <div class="logo__name">Традиция</div>
+          </div>
+        </a>
+
+        <span class="logo__desc-v">
+          сочетание фундаментальных наук и <br /> художественного образования
+        </span>
+      </div>
+
+      <nav class="menu">
+        <ul class="menu__list">
+          <li class="list__item">
+            <a class="list__link" href="../preschool">Подготовка к школе</a>
+          </li>
+          <li class="list__item">
+            <a class="list__link" href="../junior-school">Начальные классы</a>
+          </li>
+          <li class="list__item">
+            <a class="list__link" href="../middle-school">Средние классы</a>
+          </li>
+
+          <li class="list__item">
+            <a class="list__link" href="../admission">Поступление</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__part-right">
+        <div class="header__phone">+7 342 255 64 19</div>
+        <div class="burger" id="burger">
+          <div class="burger-icon">
+            <div class="burger-icon__line"></div>
+            <div class="burger-icon__line"></div>
+            <div class="burger-icon__line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  (function () {
+    const burger = document.getElementById("burger");
+    const popupMenu = document.getElementById("popupMenu");
+    const overlay = document.getElementById("overlay");
+    const body = document.body;
+
+    burger?.addEventListener("click", () => {
+      overlay?.style.setProperty("display", "block");
+      body?.classList.add("body-no-scrool");
+      popupMenu?.classList.add("popup-menu__active");
+    });
+  })();
+</script>
+
+<style is:global>
+  .header {
+    height: 100px;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    color: var(--color-white);
+  }
+
+
+  .header__part-left {
+    display: flex;
+    column-gap: 40px;
+  }
+
+  .logo {
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+  }
+
+  .logo__wrapper-img {
+    width: 45px;
+    height: 45px;
+    border: 2px solid rgb(255, 255, 255); 
+    border-radius: 10px 0px 10px 10px;
+    overflow: hidden;
+  }
+
+
+
+  .logo__wrapper-name {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo__name {
+    font-size: 27px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  .logo__desc {
+    color: var(--accent-color);
+    font-size: 11.3px;
+    letter-spacing: 1.5px;
+    text-align: right;
+    margin-bottom: -7px;
+  }
+
+  .logo__desc-v {
+    color: var(--accent-color);
+    font-size: 12px;
+
+    font-weight: 400;
+    letter-spacing: 1px;
+    align-content: center;
+    line-height: 1.6;
+  }
+
+  .menu__list {
+    width: 100%;
+    display: flex;
+    column-gap: 50px;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .list__link {
+    font-size: 16px;
+    color: var(--color-white);
+  }
+
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__part-right {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    color: var(--accent-color);
+  }
+
+  .header__phone {
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* burger */
+  .burger {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    align-items: center;
+  }
+
+  .burger-icon {
+    height: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .burger-icon__line {
+    width: 20px;
+    height: 2px;
+    background: var(--accent-color);
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+  }
+</style>

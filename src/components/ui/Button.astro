@@ -1,0 +1,45 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<div id="button" class:list={["button", className]} {...rest}>
+  <slot />
+</div>
+
+<script>
+  (function () {
+    const buttons = Array.from(document.getElementsByClassName("button")) 
+    const modal = document.getElementById("modal");
+    const overlay = document.getElementById("overlay");
+    const body = document.body;
+
+    
+
+    buttons.forEach((button) => {
+      button?.addEventListener("click", () => {
+        overlay?.style.setProperty("display", "block");
+        body?.classList.add("body-no-scrool");
+        modal?.style.setProperty("display", "block");
+      });
+    });
+  })();
+</script>
+
+<style is:global>
+  .button {
+    width: 230px;
+    height: 55px;
+    background-color: var(--main-color);
+
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    font-size: 14px;
+    color: var(--font-color);
+    color: white;
+    letter-spacing: 0.6px;
+  }
+</style>
