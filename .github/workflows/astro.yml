@@ -18,12 +18,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Install, build, and upload site
         uses: withastro/action@v5
-        with:
-          # Ниже - необязательные параметры для точной настройки
-          # path: . # Путь к проекту, если он не в корне
-          # node-version: 20 # Явное указание версии Node.js
-          # package-manager: pnpm@latest # Явный выбор менеджера пакетов
-          # build-cmd: pnpm run build # Явное указание команды сборки
+       
 
   deploy:
     needs: build
