@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Astro v5.15.3" />
+    <title>Astro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <div id="modal" class="modal" style="display: none">
+      <div class="modal__header">
+        <div class="modal__title"></div>
+        <div class="modal__close">
+          <div class="modal__close-r"></div>
+          <div class="modal__close-l"></div>
+        </div>
+      </div>
+      <div class="modal__main">наши мессенджеры</div>
+      <div class="modal__footer"></div>
+    </div>
+    <script type="module" src="../scripts/script2.js"></script>
+    <div id="popupMenu" class="popup-menu">
+      <div class="popup-menu__header">
+        <div class="popup-menu__phone">+7 342 255 64 19</div>
+        <div id="popup-menu__close" class="popup-menu__close">
+          <div class="popup-menu__close-r"></div>
+          <div class="popup-menu__close-l"></div>
+        </div>
+      </div>
+      <div class="popup-menu__body">
+        <nav class="popup-menu__menu">
+          <ul class="popup-menu__list">
+            <li class="popup-menu__list-item">
+              <div class="popup-menu__list-item-title" role="button">
+                О «Традиции»
+              </div>
+              <ul class="popup-menu__inner-list">
+                <li class="popup-menu__inner-list-item">
+                  <a class="popup-menu__link" href="../about">О «Традиции»</a>
+                </li>
+                <li class="popup-menu__inner-list-item">
+                  <a class="popup-menu__link" href="../about/all-news"
+                    >Все новости</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="popup-menu__list-item">
+              <div class="popup-menu__list-item-title" role="button">
+                Образование
+              </div>
+              <ul class="popup-menu__inner-list">
+                <li class="popup-menu__inner-list-item">
+                  <a class="popup-menu__link" href="../preschool"
+                    >Подготовка к школе</a
+                  >
+                </li>
+                <li class="popup-menu__inner-list-item">
+                  <a class="popup-menu__link" href="../junior-school"
+                    >Начальные классы</a
+                  >
+                </li>
+                <li class="popup-menu__inner-list-item">
+                  <a class="popup-menu__link" href="../middle-school"
+                    >Средние классы</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="popup-menu__list-item">
+              <a href="../vacancy" class="popup-menu__link">Вакансии</a>
+            </li>
+            <li class="popup-menu__list-item">
+              <a class="popup-menu__link" href="../sveden"
+                >Сведения об образовательной организации</a
+              >
+            </li>
+            <li class="popup-menu__list-item">
+              <a href="../contacts" class="popup-menu__link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="popup-menu__footer"></div>
+    </div>
+    <script type="module" src="../scripts/script3.js"></script>
+    <div id="overlay" class="overlay"></div>
+    <script type="module" src="../scripts/script4.js"></script>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="header__part-left">
+            <a href="/" class="logo">
+              <div class="logo__wrapper-img">
+                <img
+                  class="logo__img"
+                  src="../images/logo/logo115.png"
+                  alt="логотип"
+                />
+              </div>
+              <div class="logo__wrapper-name">
+                <div class="logo__name">Традиция</div>
+              </div>
+            </a>
+            <span class="logo__desc-v">
+              сочетание фундаментальных наук и <br />
+              художественного образования
+            </span>
+          </div>
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="list__item">
+                <a class="list__link" href="../preschool">Подготовка к школе</a>
+              </li>
+              <li class="list__item">
+                <a class="list__link" href="../junior-school"
+                  >Начальные классы</a
+                >
+              </li>
+              <li class="list__item">
+                <a class="list__link" href="../middle-school">Средние классы</a>
+              </li>
+              <li class="list__item">
+                <a class="list__link" href="../admission">Поступление</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__part-right">
+            <div class="header__phone">+7 342 255 64 19</div>
+            <div class="burger" id="burger">
+              <div class="burger-icon">
+                <div class="burger-icon__line"></div>
+                <div class="burger-icon__line"></div>
+                <div class="burger-icon__line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <script type="module" src="../scripts/script.js"></script>
+    <main>
+      <section class="firstscreen">
+        <div class="container">
+          <div class="firstscreen__wrapper">
+            <img
+              class="firstscreen__img"
+              src="../images/foto/main/progulka.jpg"
+              alt="Частная школа"
+            />
+            <div class="firstscreen__title">
+              <h1 class="firstscreen__h1">
+                Воспитываем и формируем <br />
+                культурные, нравственные, интеллектуальные<br />
+                основы личности
+              </h1>
+              <div class="firstscreen_wrapper-button">
+                <div id="button" class="button firstscreen__button">
+                  Обратиться к менеджеру
+                </div>
+                <script type="module" src="../scripts/script6.js"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about">
+        <div class="container">
+          <h2 class="about__title">О «Традиции»</h2>
+          <div class="about__wrapper">
+            <div class="about__part-left">
+              <p class="about__text">
+                Школа науки и искусства. Общеобразовательная программа с
+                углубленным изучением математики, литературы и английского
+                языка. А так же программа школы искусств, <br />
+                где два отделения: художественное и театральное.
+              </p>
+              <h3>Наша миссия</h3>
+              <p class="about__text">
+                Мы хотим, чтобы наши дети выросли хорошо образованными,
+                интересными, великодушными, благородными, добрыми и
+                нравственными людьми со здоровой самооценкой.
+              </p>
+              <!-- <p>
+            Образовательная политика «Школы» – быть для ребенка ресурсным местом,
+             давать внутреннюю опору, источник уверенности, душевных сил, знаний и умений.
+        </p> -->
+              <!-- <p>
+            Мы намерены воспитать ребенка, способного к активному интеллектуальному труду, 
+            сформировать высокообразованную интеллигентную личность, готовую к творческой и 
+            исследовательской деятельности, превратить образовательный процесс в удовольствие учения.
+        </p> -->
+              <img class="about__img" src="../images/foto/main/new5.jpg" alt="" />
+            </div>
+            <div class="about__part-right">
+              <div class="accordeon">
+                <div class="accordeon__wrapper">
+                  <div class="accordeon__header">
+                    <div class="accordeon__title">Математика</div>
+                    <div class="accordeon__arrow">
+                      <div class="accordeon__arrow-r"></div>
+                      <div class="accordeon__arrow-l"></div>
+                    </div>
+                  </div>
+                  <div class="accordeon__body">
+                    <div class="accordeon__text">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordeon__wrapper">
+                  <div class="accordeon__header">
+                    <div class="accordeon__title">Литература</div>
+                    <div class="accordeon__arrow">
+                      <div class="accordeon__arrow-r"></div>
+                      <div class="accordeon__arrow-l"></div>
+                    </div>
+                  </div>
+                  <div class="accordeon__body">
+                    <div class="accordeon__text">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordeon__wrapper">
+                  <div class="accordeon__header">
+                    <div class="accordeon__title">Английский язык</div>
+                    <div class="accordeon__arrow">
+                      <div class="accordeon__arrow-r"></div>
+                      <div class="accordeon__arrow-l"></div>
+                    </div>
+                  </div>
+                  <div class="accordeon__body">
+                    <div class="accordeon__text">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordeon__wrapper">
+                  <div class="accordeon__header">
+                    <div class="accordeon__title">Художественное искусство</div>
+                    <div class="accordeon__arrow">
+                      <div class="accordeon__arrow-r"></div>
+                      <div class="accordeon__arrow-l"></div>
+                    </div>
+                  </div>
+                  <div class="accordeon__body">
+                    <div class="accordeon__text">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordeon__wrapper">
+                  <div class="accordeon__header">
+                    <div class="accordeon__title">Театральное искусство</div>
+                    <div class="accordeon__arrow">
+                      <div class="accordeon__arrow-r"></div>
+                      <div class="accordeon__arrow-l"></div>
+                    </div>
+                  </div>
+                  <div class="accordeon__body">
+                    <div class="accordeon__text">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                      elit.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script type="module" src="../scripts/script5.js"></script>
+              <div id="button" class="button about__button">Подробнее</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="advantages">
+        <div class="container">
+          <h2 class="advantages__title">
+            Для кого подойдет «Традиция»(преимушества)
+          </h2>
+          <div class="advantages__wrapper"></div>
+        </div>
+      </section>
+      <section class="programs">
+        <div class="container">
+          <h2 class="programs__title">Программа обучения</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In quasi
+            iste nobis facere aliquid magnam odit eius <br />
+            consequuntur necessitatibus sequi itaque inventore distinctio, minus
+            at tempore ipsa asperiores pariatur beatae?
+          </p>
+          <div class="programs__wrapper">
+            <div class="case">
+              <!-- Левая колонка - Клиенты -->
+              <div class="case__clients">
+                <div class="client">
+                  <!-- <div class="client__icon client__icon--x5"></div> -->
+                  <h3 class="client__name">Подготовка к школе</h3>
+                </div>
+                <div class="client">
+                  <!-- <div class="client__icon client__icon--metro"></div> -->
+                  <h3 class="client__name">Начальные классы</h3>
+                </div>
+                <div class="client">
+                  <!-- <div class="client__icon client__icon--cafe"></div> -->
+                  <h3 class="client__name">Средние классы</h3>
+                </div>
+                <div class="client">
+                  <!-- <div class="client__icon client__icon--seo"></div> -->
+                  <h3 class="client__name">Сопровождение</h3>
+                </div>
+                <div class="client">
+                  <!-- <div class="client__icon client__icon--seo"></div> -->
+                  <h3 class="client__name">Дополнительное образование</h3>
+                </div>
+              </div>
+              <!-- Центральная колонка - Статистика -->
+              <div class="case__stats">
+                <div class="stat">
+                  <h3 class="stat__value">Ключевые особенности</h3>
+                  <p class="stat__description">
+                    Увеличение количества клиентов из РФ за счёт отсутствия
+                    необходимости прохождения валютного контроля при оплате.
+                  </p>
+                </div>
+                <div class="stat">
+                  <h3 class="stat__value">Lorem ipsum dolor</h3>
+                  <p class="stat__description">
+                    Снижение нагрузки на менеджеров и бухгалтеров при приёме
+                    платежей от корпоративных клиентов из РФ.
+                  </p>
+                </div>
+                <div class="stat">
+                  <h3 class="stat__value">Lorem ipsum dolor</h3>
+                  <p class="stat__description">
+                    Увеличение индекса лояльности покупателей.
+                  </p>
+                </div>
+                <div class="tabs__button">
+                  <a href="#" class="tabs__button-link">
+                    <span>Узнать больше</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Правая колонка - Карточка -->
+              <div class="case__card">
+                <div class="card">
+                  <img
+                    src="../images/foto/main/new3.jpg"
+                    alt="Background"
+                    class="card__image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="psychologist">
+        <div class="container">
+          <h2 class="psychologist__title">Психологическая служба</h2>
+          <h2><div class="psychologist__wrapper"></div></h2>
+        </div>
+      </section>
+      <section class="room">
+        <div class="container">
+          <h2 class="room__title">Пространство</h2>
+          <h2><div class="room__wrapper"></div></h2>
+        </div>
+      </section>
+      <section class="team">
+        <div class="container">
+          <h2 class="team__title">
+            Наша команда<h> <div class="team__wrapper"></div> </h>
+          </h2>
+        </div>
+      </section>
+      <section class="reviews">
+        <div class="container">
+          <h2 class="reviews__title">Отзывы</h2>
+          <h2><div class="reviews__wrapper"></div></h2>
+        </div>
+      </section>
+      <section class="news">
+        <div class="container">
+          <div class="news__header">
+            <h2>Новости и события</h2>
+            <a href="../about/all-news" class="all__news-link">Все новости</a>
+          </div>
+          <div class="news__grid">
+            <div class="news__card">
+              <h3 class="card__title">4 и 5 классы посетили «Театр Тятрик»</h3>
+              <p class="news__description">
+                Ребята посмотрели чудесный спектакль «Родители на прокат»
+              </p>
+              <div class="news__footer">
+                <span class="news__date">24 января 2026</span>
+              </div>
+            </div>
+            <div class="news__card">
+              <h3 class="card__title">
+                II научно-практическая конференция школы «Традиция»
+              </h3>
+              <p class="news__description">
+                8 февраля 2026 года — мероприятие для абитуриентов,
+                родителей,учителей.
+              </p>
+              <div class="news__footer">
+                <span class="news__date">1 сентября 2025</span>
+              </div>
+            </div>
+            <div class="news__card">
+              <h3 class="card__title">Посещение нового зоопарка</h3>
+              <p class="news__description">
+                8 февраля 2026 года — мероприятие для абитуриентов,
+                родителей,учителей.
+              </p>
+              <div class="news__footer">
+                <span class="news__date">23 сентября 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="questions">
+        <div class="container">
+          <h2 class="questions__title">Вопросы</h2>
+          <div class="questions__wrapper">
+            <div class="accordeon questions__accordeon">
+              <div class="accordeon__wrapper">
+                <div class="accordeon__header">
+                  <div class="accordeon__title">Математика</div>
+                  <div class="accordeon__arrow">
+                    <div class="accordeon__arrow-r"></div>
+                    <div class="accordeon__arrow-l"></div>
+                  </div>
+                </div>
+                <div class="accordeon__body">
+                  <div class="accordeon__text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.
+                  </div>
+                </div>
+              </div>
+              <div class="accordeon__wrapper">
+                <div class="accordeon__header">
+                  <div class="accordeon__title">Литература</div>
+                  <div class="accordeon__arrow">
+                    <div class="accordeon__arrow-r"></div>
+                    <div class="accordeon__arrow-l"></div>
+                  </div>
+                </div>
+                <div class="accordeon__body">
+                  <div class="accordeon__text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.
+                  </div>
+                </div>
+              </div>
+              <div class="accordeon__wrapper">
+                <div class="accordeon__header">
+                  <div class="accordeon__title">Английский язык</div>
+                  <div class="accordeon__arrow">
+                    <div class="accordeon__arrow-r"></div>
+                    <div class="accordeon__arrow-l"></div>
+                  </div>
+                </div>
+                <div class="accordeon__body">
+                  <div class="accordeon__text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.
+                  </div>
+                </div>
+              </div>
+              <div class="accordeon__wrapper">
+                <div class="accordeon__header">
+                  <div class="accordeon__title">Художественное искусство</div>
+                  <div class="accordeon__arrow">
+                    <div class="accordeon__arrow-r"></div>
+                    <div class="accordeon__arrow-l"></div>
+                  </div>
+                </div>
+                <div class="accordeon__body">
+                  <div class="accordeon__text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.
+                  </div>
+                </div>
+              </div>
+              <div class="accordeon__wrapper">
+                <div class="accordeon__header">
+                  <div class="accordeon__title">Театральное искусство</div>
+                  <div class="accordeon__arrow">
+                    <div class="accordeon__arrow-r"></div>
+                    <div class="accordeon__arrow-l"></div>
+                  </div>
+                </div>
+                <div class="accordeon__body">
+                  <div class="accordeon__text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="questions__form-desc">
+              Здавствуйте, меня зовут Анна, я менеджер по продажам в «Традиции»
+              и отвечаю за коммуникацию и консультирование родителей. Позвоните
+              мне, я отвечу на все ваши вопросы, расскажу о поступление,
+              программе обучения, досуге детей, психологической службе, питании
+              и дополнителном образовании, запишу вас на индивидуальную встречу
+              (экскурсию) в удобное для вас время, организую встречу с
+              руководителями. Кстати вы можете оставить заявку и я перезвоню Вам
+              сама или написать в телеграмм или в вк. Я буду очень рада вам
+              помочь. Если у Вас остались вопросы, или нужно записаться на
+              экскурсию обязательно набирайте. Жду!
+            </p>
+            <img
+              src="../images/foto/main/anna1.jpg"
+              alt=""
+              class="questions__img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"></footer>
+  </body>
+</html>
