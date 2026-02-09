@@ -26,23 +26,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
+      # ЭТОТ ШАГ САМ ЗАГРУЖАЕТ АРТЕФАКТ
       - name: Build with Astro
         uses: withastro/action@v5
         with:
           node-version: 22
-    
-    # 👇 Ключевое изменение: шаг загрузки артефакта теперь внутри job 'build'
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist  # Astro по умолчанию собирает в папку dist
+      
+      # ⚠️ УДАЛИТЬ ЭТОТ ШАГ - он дублируется!
+      # - name: Upload Pages Artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: ./dist
 
-  # 👇 Этот ВТОРОЙ job был пропущен. Он отвечает за публикацию.
   deploy:
-    # Ждёт завершения job 'build'
     needs: build
     runs-on: ubuntu-latest
-    # Указываем специальное окружение для GitHub Pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
